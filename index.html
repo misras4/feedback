@@ -14,7 +14,7 @@
       min-height: 100vh;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 20px;
     }
@@ -50,8 +50,8 @@
     }
     .department {
       flex: 1;
-      min-width: 300px;
-      max-width: 450px;
+      min-width: 320px;
+      max-width: 500px;
     }
     .dept-title {
       text-align: center;
@@ -64,7 +64,7 @@
     }
     .batch-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 15px;
       padding: 20px;
       background-color: white;
@@ -84,16 +84,24 @@
       box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
       background-color: #ebf3fd;
     }
+    .batch-title {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+    .batch-status {
+      font-size: 1.1em;
+      color: #7f8c8d;
+      font-style: italic;
+    }
     .batch-card a {
       text-decoration: none;
-      color: #2c3e50;
-      font-size: 1.4em;
-      font-weight: bold;
       display: block;
       width: 100%;
       height: 100%;
     }
-    .batch-card a:hover {
+    .batch-card a:hover .batch-title {
       color: #2980b9;
     }
     footer {
@@ -103,14 +111,14 @@
       font-size: 0.9em;
     }
     @media (max-width: 768px) {
-      .batch-grid {
-        grid-template-columns: 1fr;
-      }
       h1 {
         font-size: 2.2em;
       }
       .dept-title {
         font-size: 1.5em;
+      }
+      .batch-title {
+        font-size: 1.4em;
       }
     }
   </style>
@@ -126,6 +134,8 @@
       <strong>Instructions:</strong><br>
       Please select your <strong>Department</strong> and <strong>Batch</strong> below to access the feedback forms.
       Fill out the relevant forms honestly. Your feedback is anonymous and highly valuable for improving teaching and facilities.
+      <br><br>
+      <strong>Note:</strong> Passed-out batches can still submit program-end or alumni feedback if applicable.
     </div>
 
     <div class="departments">
@@ -133,10 +143,36 @@
       <div class="department">
         <h2 class="dept-title">CSE Department</h2>
         <div class="batch-grid">
-          <div class="batch-card"><a href="cse-2021-2025.html">2021–2025 Batch</a></div>
-          <div class="batch-card"><a href="cse-2022-2026.html">2022–2026 Batch</a></div>
-          <div class="batch-card"><a href="cse-2023-2027.html">2023–2027 Batch</a></div>
-          <div class="batch-card"><a href="cse-2024-2028.html">2024–2028 Batch</a></div>
+          <div class="batch-card">
+            <a href="cse-2021-2025.html">
+              <div class="batch-title">2021–2025 Batch</div>
+              <div class="batch-status">(Passed Out)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="cse-2022-2026.html">
+              <div class="batch-title">2022–2026 Batch</div>
+              <div class="batch-status">(Currently Final Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="cse-2023-2027.html">
+              <div class="batch-title">2023–2027 Batch</div>
+              <div class="batch-status">(Currently 3rd Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="cse-2024-2028.html">
+              <div class="batch-title">2024–2028 Batch</div>
+              <div class="batch-status">(Currently 2nd Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="cse-2025-2029.html">
+              <div class="batch-title">2025–2029 Batch</div>
+              <div class="batch-status">(Currently 1st Year)</div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -144,10 +180,36 @@
       <div class="department">
         <h2 class="dept-title">IT Department</h2>
         <div class="batch-grid">
-          <div class="batch-card"><a href="it-2021-2025.html">2021–2025 Batch</a></div>
-          <div class="batch-card"><a href="it-2022-2026.html">2022–2026 Batch</a></div>
-          <div class="batch-card"><a href="it-2023-2027.html">2023–2027 Batch</a></div>
-          <div class="batch-card"><a href="it-2024-2028.html">2024–2028 Batch</a></div>
+          <div class="batch-card">
+            <a href="it-2021-2025.html">
+              <div class="batch-title">2021–2025 Batch</div>
+              <div class="batch-status">(Passed Out)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="it-2022-2026.html">
+              <div class="batch-title">2022–2026 Batch</div>
+              <div class="batch-status">(Currently Final Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="it-2023-2027.html">
+              <div class="batch-title">2023–2027 Batch</div>
+              <div class="batch-status">(Currently 3rd Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="it-2024-2028.html">
+              <div class="batch-title">2024–2028 Batch</div>
+              <div class="batch-status">(Currently 2nd Year)</div>
+            </a>
+          </div>
+          <div class="batch-card">
+            <a href="it-2025-2029.html">
+              <div class="batch-title">2025–2029 Batch</div>
+              <div class="batch-status">(Currently 1st Year)</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
