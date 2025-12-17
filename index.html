@@ -1,63 +1,161 @@
-<!-- index.html (Landing Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Student Feedback Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Feedback Portal</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       color: #333;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
     }
     h1 {
-      text-align: center;
-    }
-    h2 {
-      margin-top: 30px;
-    }
-    .form-section {
-      margin-top: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      border-radius: 10px;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
+      font-size: 2.8em;
+      color: #2c3e50;
       margin-bottom: 10px;
     }
-    a {
-      color: #0066cc;
-      text-decoration: none;
+    .subtitle {
+      font-size: 1.3em;
+      color: #555;
+      margin-bottom: 20px;
     }
-    a:hover {
-      text-decoration: underline;
+    .instructions {
+      background-color: #e8f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #3498db;
+      font-size: 1.1em;
+      color: #2c3e50;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .departments {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .department {
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+    }
+    .dept-title {
+      text-align: center;
+      font-size: 1.8em;
+      background-color: #3498db;
+      color: white;
+      padding: 15px;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 0;
+    }
+    .batch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .batch-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .batch-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
+      background-color: #ebf3fd;
+    }
+    .batch-card a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-size: 1.4em;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .batch-card a:hover {
+      color: #2980b9;
+    }
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      color: #777;
+      font-size: 0.9em;
+    }
+    @media (max-width: 768px) {
+      .batch-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 2.2em;
+      }
+      .dept-title {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Student Feedback Collection Portal</h1>
-  <div class="form-section">
-    <h2>Select Your Batch and Department</h2>
-    <h3>CSE Department</h3>
-    <ul>
-      <li><a href="cse-2021-2025.html">2021-2025</a></li>
-      <li><a href="cse-2022-2026.html">2022-2026</a></li>
-      <li><a href="cse-2023-2027.html">2023-2027</a></li>
-      <li><a href="cse-2024-2028.html">2024-2028</a></li>
-    </ul>
-    <h3>IT Department</h3>
-    <ul>
-      <li><a href="it-2021-2025.html">2021-2025</a></li>
-      <li><a href="it-2022-2026.html">2022-2026</a></li>
-      <li><a href="it-2023-2027.html">2023-2027</a></li>
-      <li><a href="it-2024-2028.html">2024-2028</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <h1>Student Feedback Portal</h1>
+      <p class="subtitle">Your Opinion Matters – Help Us Improve!</p>
+    </header>
+
+    <div class="instructions">
+      <strong>Instructions:</strong><br>
+      Please select your <strong>Department</strong> and <strong>Batch</strong> below to access the feedback forms.
+      Fill out the relevant forms honestly. Your feedback is anonymous and highly valuable for improving teaching and facilities.
+    </div>
+
+    <div class="departments">
+      <!-- CSE Department -->
+      <div class="department">
+        <h2 class="dept-title">CSE Department</h2>
+        <div class="batch-grid">
+          <div class="batch-card"><a href="cse-2021-2025.html">2021–2025 Batch</a></div>
+          <div class="batch-card"><a href="cse-2022-2026.html">2022–2026 Batch</a></div>
+          <div class="batch-card"><a href="cse-2023-2027.html">2023–2027 Batch</a></div>
+          <div class="batch-card"><a href="cse-2024-2028.html">2024–2028 Batch</a></div>
+        </div>
+      </div>
+
+      <!-- IT Department -->
+      <div class="department">
+        <h2 class="dept-title">IT Department</h2>
+        <div class="batch-grid">
+          <div class="batch-card"><a href="it-2021-2025.html">2021–2025 Batch</a></div>
+          <div class="batch-card"><a href="it-2022-2026.html">2022–2026 Batch</a></div>
+          <div class="batch-card"><a href="it-2023-2027.html">2023–2027 Batch</a></div>
+          <div class="batch-card"><a href="it-2024-2028.html">2024–2028 Batch</a></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 Your College/Institute Name. All rights reserved.<br>
+      For issues, contact: feedback@yourcollege.edu
+    </footer>
   </div>
 </body>
 </html>
