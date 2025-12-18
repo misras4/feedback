@@ -77,6 +77,15 @@
       font-weight: bold;
       color: #856404;
     }
+    .important-note {
+      background-color: #e8f4fd;
+      border-left: 5px solid #3498db;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
     .back-link {
       display: inline-block;
       margin-top: 30px;
@@ -114,12 +123,13 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="courseEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="courseEndTable"></tbody>
       </table>
 
       <h3>B. Semester End Feedback Forms</h3>
+      <div class="important-note">
+        📌 IMPORTANT: The Semester End Feedback form below is a single cumulative form. Please submit your feedback using the same form at the end of <strong>every semester</strong>. Your consistent input helps us track improvements over time.
+      </div>
       <table>
         <thead>
           <tr>
@@ -129,9 +139,7 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="semesterEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="semesterEndTable"></tbody>
       </table>
 
       <h3>C. Program End Feedback Forms</h3>
@@ -144,9 +152,7 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="programEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="programEndTable"></tbody>
       </table>
 
       <a href="index.html" class="back-link">← Back to Batch Selection</a>
@@ -173,7 +179,7 @@
             { sl: 8, semester: "Semester 1", year: "2023-24", link: "https://forms.gle/biQRwbGRF9BjcS4L9" }
           ],
           semesterEnd: [
-            { sl: 1, semester: "Once for Every Semester", year: "Regular/Lateral Students", link: "https://forms.gle/PcPbqahZpiFyrskW8" }
+            { sl: 1, semester: "Once for Every Semester", year: "Regular/Lateral Students", link: "https://forms.gle/nBPLMjZDcQ9LJtvu7" }
           ],
           programEnd: [
             { sl: 1, semester: "At the end of 8th Semester", year: "Final Year Students", link: "NA" }
@@ -191,7 +197,7 @@
           ? "Not Available Yet" 
           : `<a href="${entry.link}" target="_blank">Click here</a>`;
         
-        // Highlight newly added urgent forms with a visual indicator
+        // Highlight urgent course-end forms
         if (entry.link === "https://forms.gle/1awTkA6SpohbaDKE8" || 
             entry.link === "https://forms.gle/SyaPw4F4skz4DS9T8" || 
             entry.link === "https://forms.gle/NZbVWv1JiAjJjAv77") {
@@ -211,7 +217,6 @@
     window.onload = function() {
       const batch = "2023-2027";
       const department = "CSE";
-
       populateTable("courseEndTable", feedbackData[batch][department].courseEnd);
       populateTable("semesterEndTable", feedbackData[batch][department].semesterEnd);
       populateTable("programEndTable", feedbackData[batch][department].programEnd);
