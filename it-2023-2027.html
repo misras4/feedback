@@ -114,9 +114,7 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="courseEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="courseEndTable"></tbody>
       </table>
 
       <h3>B. Semester End Feedback Forms</h3>
@@ -129,9 +127,7 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="semesterEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="semesterEndTable"></tbody>
       </table>
 
       <h3>C. Program End Feedback Forms</h3>
@@ -144,9 +140,7 @@
             <th>Link</th>
           </tr>
         </thead>
-        <tbody id="programEndTable">
-          <!-- Filled by JavaScript -->
-        </tbody>
+        <tbody id="programEndTable"></tbody>
       </table>
 
       <a href="index.html" class="back-link">← Back to Batch Selection</a>
@@ -173,7 +167,7 @@
             { sl: 8, semester: "Semester 1", year: "2023-24", link: "https://forms.gle/jijTmMskEHqNXku29" }
           ],
           semesterEnd: [
-            { sl: 1, semester: "Once for Every Semester", year: "Regular/Lateral Students", link: "https://forms.gle/zDUhDmrfGcRVkHu16" }
+            { sl: 1, semester: "Once for Every Semester", year: "Regular/Lateral Students", link: "https://forms.gle/o81F4x66zgDq6sd36" }
           ],
           programEnd: [
             { sl: 1, semester: "At the end of 8th Semester", year: "Final Year Students", link: "NA" }
@@ -191,7 +185,7 @@
           ? "Not Available Yet" 
           : `<a href="${entry.link}" target="_blank">Click here</a>`;
         
-        // Highlight newly added urgent forms
+        // Highlight the three urgent course-end forms
         if (entry.link === "https://forms.gle/tDU1A16BX6wwhWxt8" || 
             entry.link === "https://forms.gle/A9KvM9tj45Q6QWb39" || 
             entry.link === "https://forms.gle/nbspEfRFQqKTzZWK9") {
@@ -211,7 +205,6 @@
     window.onload = function() {
       const batch = "2023-2027";
       const department = "IT";
-
       populateTable("courseEndTable", feedbackData[batch][department].courseEnd);
       populateTable("semesterEndTable", feedbackData[batch][department].semesterEnd);
       populateTable("programEndTable", feedbackData[batch][department].programEnd);
