@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback - IT 2023–2027 Batch</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+    .subtitle {
+      font-size: 1.3em;
+      color: #555;
+    }
+    .form-section {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    h3 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f8ff;
+      font-weight: bold;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .urgent {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #856404;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 1.1em;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student Feedback Portal</h1>
+      <p class="subtitle">IT Department – 2023–2027 Batch (Currently 3rd Year)</p>
+    </header>
+
+    <div class="form-section">
+      <h2>Feedback Collection Links</h2>
+
+      <div class="urgent">
+        ⚠️ URGENT: Please fill the newly activated Course End Feedback forms for Semester 3, Semester 4 (AY 2024-25), and Semester 5 (AY 2025-26) as soon as possible. These must be submitted within December 2025. Your timely response is crucial!
+      </div>
+
+      <h3>A. Course End Feedback Collection Forms</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>SL</th>
+            <th>Semester</th>
+            <th>Academic Year</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="courseEndTable">
+          <!-- Filled by JavaScript -->
+        </tbody>
+      </table>
+
+      <h3>B. Semester End Feedback Forms</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>SL</th>
+            <th>Semester</th>
+            <th>Academic Year</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="semesterEndTable">
+          <!-- Filled by JavaScript -->
+        </tbody>
+      </table>
+
+      <h3>C. Program End Feedback Forms</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>SL</th>
+            <th>Semester</th>
+            <th>Academic Year</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="programEndTable">
+          <!-- Filled by JavaScript -->
+        </tbody>
+      </table>
+
+      <a href="index.html" class="back-link">← Back to Batch Selection</a>
+    </div>
+
+    <footer>
+      © 2025 Your College/Institute Name. All rights reserved.<br>
+      For issues, contact: feedback@yourcollege.edu
+    </footer>
+  </div>
+
+  <script>
+    const feedbackData = {
+      "2023-2027": {
+        "IT": {
+          courseEnd: [
+            { sl: 1, semester: "Semester 8", year: "2026-27", link: "NA" },
+            { sl: 2, semester: "Semester 7", year: "2026-27", link: "NA" },
+            { sl: 3, semester: "Semester 6", year: "2025-26", link: "NA" },
+            { sl: 4, semester: "Semester 5", year: "2025-26", link: "https://forms.gle/tDU1A16BX6wwhWxt8" },
+            { sl: 5, semester: "Semester 4", year: "2024-25", link: "https://forms.gle/A9KvM9tj45Q6QWb39" },
+            { sl: 6, semester: "Semester 3", year: "2024-25", link: "https://forms.gle/nbspEfRFQqKTzZWK9" },
+            { sl: 7, semester: "Semester 2", year: "2023-24", link: "https://forms.gle/NNGBDQtCvNKBvTsS9" },
+            { sl: 8, semester: "Semester 1", year: "2023-24", link: "https://forms.gle/jijTmMskEHqNXku29" }
+          ],
+          semesterEnd: [
+            { sl: 1, semester: "Once for Every Semester", year: "Regular/Lateral Students", link: "https://forms.gle/zDUhDmrfGcRVkHu16" }
+          ],
+          programEnd: [
+            { sl: 1, semester: "At the end of 8th Semester", year: "Final Year Students", link: "NA" }
+          ]
+        }
+      }
+    };
+
+    function populateTable(tableId, data) {
+      const tableBody = document.getElementById(tableId);
+      tableBody.innerHTML = "";
+      data.forEach(entry => {
+        const row = document.createElement("tr");
+        let linkCell = entry.link === "NA" 
+          ? "Not Available Yet" 
+          : `<a href="${entry.link}" target="_blank">Click here</a>`;
+        
+        // Highlight newly added urgent forms
+        if (entry.link === "https://forms.gle/tDU1A16BX6wwhWxt8" || 
+            entry.link === "https://forms.gle/A9KvM9tj45Q6QWb39" || 
+            entry.link === "https://forms.gle/nbspEfRFQqKTzZWK9") {
+          linkCell = `<strong style="color:#d9534f;">${linkCell} (URGENT - Submit by Dec 2025)</strong>`;
+        }
+
+        row.innerHTML = `
+          <td>${entry.sl}</td>
+          <td>${entry.semester}</td>
+          <td>${entry.year}</td>
+          <td>${linkCell}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    window.onload = function() {
+      const batch = "2023-2027";
+      const department = "IT";
+
+      populateTable("courseEndTable", feedbackData[batch][department].courseEnd);
+      populateTable("semesterEndTable", feedbackData[batch][department].semesterEnd);
+      populateTable("programEndTable", feedbackData[batch][department].programEnd);
+    };
+  </script>
+</body>
+</html>
