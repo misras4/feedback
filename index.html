@@ -42,6 +42,18 @@
       max-width: 800px;
       margin: 0 auto 40px;
     }
+    .urgent-banner {
+      background-color: #fff3cd;
+      border-left: 6px solid #ffc107;
+      padding: 18px;
+      margin: 30px auto;
+      border-radius: 8px;
+      max-width: 900px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #856404;
+    }
     .departments {
       display: flex;
       flex-wrap: wrap;
@@ -78,11 +90,28 @@
       border-radius: 10px;
       transition: all 0.3s ease;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 4px solid #bdc3c7;
     }
     .batch-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
-      background-color: #ebf3fd;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    /* Special styling for current feedback batches (Dec 2025) */
+    .batch-card.active-feedback {
+      background-color: #e8f5e9;
+      border-left: 6px solid #28a745;
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+    }
+    .batch-card.active-feedback:hover {
+      background-color: #d4edda;
+      box-shadow: 0 12px 24px rgba(40, 167, 69, 0.3);
+    }
+    .batch-card.active-feedback .batch-title {
+      color: #155724;
+    }
+    .batch-card.active-feedback .batch-status {
+      color: #28a745;
+      font-weight: bold;
     }
     .batch-title {
       font-size: 1.6em;
@@ -120,6 +149,10 @@
       .batch-title {
         font-size: 1.4em;
       }
+      .urgent-banner {
+        font-size: 1.1em;
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -138,6 +171,11 @@
       <strong>Note:</strong> Passed-out batches can still submit program-end or alumni feedback if applicable.
     </div>
 
+    <div class="urgent-banner">
+      ⚠️ CURRENT FEEDBACK DRIVE (December 2025):<br>
+      Students from <strong>2022–2026 (Final Year)</strong> and <strong>2023–2027 (3rd Year)</strong> batches are requested to submit their Course End and Semester End feedback urgently this month.
+    </div>
+
     <div class="departments">
       <!-- CSE Department -->
       <div class="department">
@@ -149,16 +187,16 @@
               <div class="batch-status">(Passed Out)</div>
             </a>
           </div>
-          <div class="batch-card">
+          <div class="batch-card active-feedback">
             <a href="cse-2022-2026.html">
               <div class="batch-title">2022–2026 Batch</div>
-              <div class="batch-status">(Currently Final Year)</div>
+              <div class="batch-status">(Currently Final Year – Active Feedback)</div>
             </a>
           </div>
-          <div class="batch-card">
+          <div class="batch-card active-feedback">
             <a href="cse-2023-2027.html">
               <div class="batch-title">2023–2027 Batch</div>
-              <div class="batch-status">(Currently 3rd Year)</div>
+              <div class="batch-status">(Currently 3rd Year – Active Feedback)</div>
             </a>
           </div>
           <div class="batch-card">
@@ -186,16 +224,16 @@
               <div class="batch-status">(Passed Out)</div>
             </a>
           </div>
-          <div class="batch-card">
+          <div class="batch-card active-feedback">
             <a href="it-2022-2026.html">
               <div class="batch-title">2022–2026 Batch</div>
-              <div class="batch-status">(Currently Final Year)</div>
+              <div class="batch-status">(Currently Final Year – Active Feedback)</div>
             </a>
           </div>
-          <div class="batch-card">
+          <div class="batch-card active-feedback">
             <a href="it-2023-2027.html">
               <div class="batch-title">2023–2027 Batch</div>
-              <div class="batch-status">(Currently 3rd Year)</div>
+              <div class="batch-status">(Currently 3rd Year – Active Feedback)</div>
             </a>
           </div>
           <div class="batch-card">
